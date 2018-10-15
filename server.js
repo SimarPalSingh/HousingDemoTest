@@ -1,21 +1,14 @@
 const mc = require('./manychat.js');
 const http = require("http");
 var port = process.env.PORT || 3000;
-function hello_world(){
+function choice1(data){
 
     var msg =mc.message_create();
-    mc.message_add_text(msg,"Hello, World");
-    console.log(msg);
+    mc.message_add_text(msg,"You chose " + data);
     return msg;
 }
 
-function bye(){
 
-    var msg =mc.message_create();
-    mc.message_add_text(msg,"Bye");
-    console.log(msg);
-    return msg;
-}
 
 http.createServer(function(request,response) {
     response.setHeader('Access-Control-Allow-Origin','*');
@@ -38,8 +31,8 @@ function generate_response(body,response){
     data= JSON.parse(body);
     switch (data.type)
     {
-        case "hello world" : msg = hello_world();
-        case "bye"         : msg =bye();
+        case "choice1" : msg = choice1(data.cereals);break;
+        
     }
     response.writeHead(200);
     response.write(JSON.stringify(msg));
