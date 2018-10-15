@@ -57,8 +57,8 @@ function generate_response(body,response){
     data= JSON.parse(body);
     switch (data.type)
     {
-        // case "content" : msg = content(data.firstName);break;
-        // case "choice1" : msg = choice1(data.cereals);break;
+        case "content" : msg = content(data.firstName);break;
+        case "choice1" : msg = choice1(data.cereals);break;
         case "kitten" : msg = send_kitten();
         break;
         case "cards" : msg = house_of_cards();
