@@ -22,7 +22,7 @@ function content(data){
 
 function send_kitten() {
     var msg = mc.message_create();
-    mc.message_add_image('https://placekitten.com/305/294');
+    mc.message_add_image('https://placekitten.com/305/294.png');
     return msg;
 }
 
