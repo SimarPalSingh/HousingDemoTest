@@ -15,7 +15,7 @@ function content(data){
     btn[0]=mc.new_button_node("cereals","Send Message #2");
     btn[1]=mc.new_button_node("maggi","Send Message #2");
 
-    mc.message_add_text(msg,"Hi there"  + data + "\nChoose one",btn);
+    mc.message_add_text(msg,"Hi there "  + data + "\nChoose one",btn);
    
     return msg;
 }
@@ -23,6 +23,16 @@ function content(data){
 function send_kitten() {
     var msg = mc.message_create();
     mc.message_add_image(msg,'https://placekitten.com/305/294');
+    return msg;
+}
+
+function house_of_cards() {
+	// both the buttons and card params are always arrays
+    var msg = mc.message_create();
+    var buttons = [], cards = [];
+    buttons[0] = new_button_url("More like this!",https://www.example.com");
+    card[0] = mc.new_card("3 bed/bathroom house in Cabramatta","Price: $790,000",buttons);
+    mc.message_add_cards(msg,cards);
     return msg;
 }
 
@@ -49,8 +59,10 @@ function generate_response(body,response){
     {
         // case "content" : msg = content(data.firstName);break;
         // case "choice1" : msg = choice1(data.cereals);break;
-        case "kitten" : msg = send_kitten();break;
-        
+        case "kitten" : msg = send_kitten();
+        break;
+        case "cards" : msg = house_of_cards();
+        break;
     }
     response.writeHead(200);
     response.write(JSON.stringify(msg));
