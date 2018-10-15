@@ -7,9 +7,7 @@ function choice1(data){
     mc.message_add_text(msg,"You chose " + data);
     return msg;
 }
-new {
 
-}
 function content(data){
 
     var msg =mc.message_create();
