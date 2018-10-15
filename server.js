@@ -36,7 +36,7 @@ http.createServer(function(request,response) {
 
 function generate_response(body,response){
     data= JSON.parse(body);
-    switch (data)
+    switch (data.type)
     {
         case "hello world" : msg = hello_world();
         case "bye"         : msg =bye();
