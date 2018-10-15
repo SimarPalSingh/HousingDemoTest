@@ -30,8 +30,8 @@ function house_of_cards() {
 	// both the buttons and card params are always arrays
     var msg = mc.message_create();
     var buttons = [], cards = [];
-    buttons[0] = new_button_url("More like this!",'https://www.realestate.com.au/property-unit-nsw-liverpool-424281258');
-    card[0] = mc.new_card("3 bed/bathroom house in Cabramatta","Price: $790,000",buttons);
+    buttons[0] = mc.new_button_url("More like this!",'https://www.realestate.com.au/property-unit-nsw-liverpool-424281258');
+    cards[0] = mc.new_card("3 bed/bathroom house in Cabramatta","Price: $790,000",buttons);
     mc.message_add_cards(msg,cards);
     return msg;
 }
