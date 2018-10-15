@@ -7,7 +7,20 @@ function choice1(data){
     mc.message_add_text(msg,"You chose " + data);
     return msg;
 }
+new {
 
+}
+function content(data){
+
+    var msg =mc.message_create();
+    var btn = [];
+    btn[0]=mc.new_button_node("cereals","Send Message #2");
+    btn[1]=mc.new_button_node("maggi","Send Message #2");
+
+    mc.message_add_text(msg,"Hi there"  + data + "\nChoose one",btn);
+   
+    return msg;
+}
 
 
 http.createServer(function(request,response) {
@@ -31,6 +44,7 @@ function generate_response(body,response){
     data= JSON.parse(body);
     switch (data.type)
     {
+        case "content" : msg = content(data.firstName);break;
         case "choice1" : msg = choice1(data.cereals);break;
         
     }
