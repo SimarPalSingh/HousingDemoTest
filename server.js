@@ -43,5 +43,5 @@ function generate_response(body,response){
     }
     response.writeHead(200);
     response.write(JSON.stringify(msg));
-    repsonse.end();
+    response.end();
 }
