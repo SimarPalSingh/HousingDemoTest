@@ -1,0 +1,19 @@
+{
+  "name": "housingdemotest",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SimarPalSingh/HousingDemoTest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SimarPalSingh/HousingDemoTest/issues"
+  },
+  "homepage": "https://github.com/SimarPalSingh/HousingDemoTest#readme"
+}
