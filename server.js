@@ -20,6 +20,11 @@ function content(data){
     return msg;
 }
 
+function send_kitten() {
+    var msg = mc.message_create();
+    mc.message_add_image('https://placekitten.com/305/294');
+    return msg;
+}
 
 http.createServer(function(request,response) {
     response.setHeader('Access-Control-Allow-Origin','*');
@@ -42,8 +47,9 @@ function generate_response(body,response){
     data= JSON.parse(body);
     switch (data.type)
     {
-        case "content" : msg = content(data.firstName);break;
-        case "choice1" : msg = choice1(data.cereals);break;
+        // case "content" : msg = content(data.firstName);break;
+        // case "choice1" : msg = choice1(data.cereals);break;
+        case "kitten" : msg = send_kitten();break;
         
     }
     response.writeHead(200);
